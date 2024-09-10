@@ -3,8 +3,6 @@ import React, { FC } from "react";
 import { Edit, Pencil, Trash2, X } from "lucide-react";
 import Image from "next/image";
 import PayDetail from "../EmployeeDetail/employeeDetailTable";
-import { ProcessPayRollDailog } from "./process-payroll-modal";
-import { PartialPayRollDailog } from "./partial-payroll-modal";
 
 interface ResizableRowDetailProps {
   selectedRow: any;
@@ -71,10 +69,6 @@ const ResizableRowDetail: FC<ResizableRowDetailProps> = ({
 
       <hr className="w-full" />
 
-      <div className="p-4 border-t flex justify-around space-x-2">
-        <PartialPayRollDailog />
-        <ProcessPayRollDailog />
-      </div>
       {/* <div className="p-4">
         <div className="flex items-center justify-between py-2">
           <div className="flex items-center">

@@ -43,10 +43,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
 
-export default function AddPayRun() {
+export default function AddUsers() {
   const [isChecked, setIsChecked] = useState(false);
 
-  const payRunSchema = (isChecked: boolean) =>
+  const usersSchema = (isChecked: boolean) =>
     z.object({
       accountId: isChecked
         ? z.string().nonempty("Account name is required")
@@ -65,7 +65,7 @@ export default function AddPayRun() {
       gender: z.string(),
     });
 
-  const formSchema = payRunSchema(isChecked);
+  const formSchema = usersSchema(isChecked);
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -137,7 +137,7 @@ export default function AddPayRun() {
                 onSubmit={form.handleSubmit(handleAddPayRun)}
                 className="space-y-6"
               >
-                <Card className="rounded-lg w-full max-w-screen-lg mx-auto mt-8 mb-8">
+                <Card className="rounded-lg w-full max-w-4xl mx-auto mt-8 mb-8">
                   <CardHeader>
                     <CardTitle>Add Pay Run</CardTitle>
                     <CardDescription>
@@ -155,7 +155,7 @@ export default function AddPayRun() {
                           Employee Details
                         </h5>
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <FormField
                           control={form.control}
                           name="name"
@@ -171,7 +171,7 @@ export default function AddPayRun() {
                             </FormItem>
                           )}
                         />
-                        {/* <FormField
+                        <FormField
                           control={form.control}
                           name="userType"
                           render={({ field }) => (
@@ -201,64 +201,6 @@ export default function AddPayRun() {
                                   <SelectItem value="Intern">Intern</SelectItem>
                                 </SelectContent>
                               </Select>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        /> */}
-                        <FormField
-                          control={form.control}
-                          name="salary"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className="text-xs font-semibold">
-                                Amount to be paid
-                              </FormLabel>
-                              <FormControl>
-                                <Input placeholder="0.0" {...field} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="authAddress"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className="text-xs font-semibold">
-                                Email Address
-                              </FormLabel>
-                              <FormControl>
-                                <Input
-                                  placeholder="xyz@gmail.com"
-                                  {...field}
-                                  disabled
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="phone"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className="text-xs font-semibold">
-                                Contact Number
-                              </FormLabel>
-                              <div className="flex">
-                                <span className="inline-flex items-center px-3 bg-gray-100 text-gray-600 border border-r-0 border-gray-300 rounded-l-md w-[7rem]">
-                                  +977
-                                </span>
-                                <FormControl>
-                                  <Input
-                                    placeholder="12354789"
-                                    {...field}
-                                    className="bg-gray-100 text-gray-600 border border-r-0 border-gray-300 rounded-l-none"
-                                  />
-                                </FormControl>
-                              </div>
                               <FormMessage />
                             </FormItem>
                           )}
@@ -298,51 +240,124 @@ export default function AddPayRun() {
                         />
                         <FormField
                           control={form.control}
-                          name="salary"
+                          name="phone"
                           render={({ field }) => (
                             <FormItem>
                               <FormLabel className="text-xs font-semibold">
-                                Salary
+                                Contact Number
+                              </FormLabel>
+                              <div className="flex">
+                                <span className="inline-flex items-center px-3 bg-gray-100 text-gray-600 border border-r-0 border-gray-300 rounded-l-md">
+                                  +977
+                                </span>
+                                <FormControl>
+                                  <Input
+                                    placeholder="Enter contact number"
+                                    {...field}
+                                    className="rounded-l-none"
+                                  />
+                                </FormControl>
+                              </div>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="authAddress"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-xs font-semibold">
+                                Email Address
                               </FormLabel>
                               <FormControl>
-                                <Input placeholder="0.0" {...field} />
+                                <Input placeholder="Enter email" {...field} />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
-                        <FormField
-                          control={form.control}
-                          name="accountId"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className="text-xs font-semibold">
-                                Payment From
-                              </FormLabel>
-                              <Select
-                                onValueChange={field.onChange}
-                                value={field.value}
-                              >
-                                <FormControl>
-                                  <SelectTrigger>
-                                    <SelectValue placeholder="Select Account" />
-                                  </SelectTrigger>
-                                </FormControl>
-                                <SelectContent>
-                                  <SelectItem value="1">Account 1</SelectItem>
-                                  <SelectItem value="2">Account 2</SelectItem>
-                                  <SelectItem value="3">Account 3</SelectItem>
-                                </SelectContent>
-                              </Select>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
+                      <div className="flex flex-col items-start mt-6">
+                        <p className="font-semibold text-xs">User Payroll</p>
+                        <div className="flex items-center gap-2 pt-3">
+                          <Checkbox
+                            checked={isChecked}
+                            onCheckedChange={handleCheckboxChange}
+                            className="h-4 w-4"
+                          />
+                          <span className="text-xs font-medium">
+                            This will list the employee name in the monthly
+                            payruns
+                          </span>
+                        </div>
                       </div>
                     </div>
-
+                    {isChecked && (
+                      <>
+                        <hr className="w-full" />
+                        <div className="mb-6 p-6">
+                          <div className="mb-4 flex items-center justfiy-center">
+                            <div className="rounded-full border flex flex-col justify-center bg-gray-100 items-center w-[30px] h-[30px]">
+                              <Banknote className="h-4" strokeWidth={1.75} />
+                            </div>
+                            <h5 className="text-sm font-semibold ml-3">
+                              Salary Details
+                            </h5>
+                          </div>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <FormField
+                              control={form.control}
+                              name="salary"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel className="text-xs font-semibold">
+                                    Salary
+                                  </FormLabel>
+                                  <FormControl>
+                                    <Input placeholder="0.0" {...field} />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            <FormField
+                              control={form.control}
+                              name="accountId"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel className="text-xs font-semibold">
+                                    Payment From
+                                  </FormLabel>
+                                  <Select
+                                    onValueChange={field.onChange}
+                                    value={field.value}
+                                  >
+                                    <FormControl>
+                                      <SelectTrigger>
+                                        <SelectValue placeholder="Select Account" />
+                                      </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent>
+                                      <SelectItem value="1">
+                                        Account 1
+                                      </SelectItem>
+                                      <SelectItem value="2">
+                                        Account 2
+                                      </SelectItem>
+                                      <SelectItem value="3">
+                                        Account 3
+                                      </SelectItem>
+                                    </SelectContent>
+                                  </Select>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+                        </div>
+                      </>
+                    )}
                     <hr className="w-full" />
                     <div className="w-full max-w-screen-lg mx-auto p-6 flex justify-end">
                       <Button variant="outline" className="mr-2 w-[170px]">

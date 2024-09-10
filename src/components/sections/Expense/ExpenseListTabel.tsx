@@ -60,126 +60,112 @@ import {
 import ResizableRowDetail from "./resizableRowDetail";
 import { ClosePayRunDailog } from "./close-payrun-modal";
 import NoDataPreivew from "../no-data-preview/NoDataPreivew";
-// const data: PaymentDetails[] = [];
-const data: PaymentDetails[] = [
+import ExpenseResizableRowDetail from "./ExpenseResizableRowDetail";
+// const data: ExpenseDetails[] = [];
+const data: ExpenseDetails[] = [
   {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
+    particulars: "Aadarsha Lamichhane",
+    amount: "12,000",
+    type: "Salary",
+    createdAt: "21 July, 2024",
+    status: "Reconciled",
+    attachments: 1,
+    action: "view",
   },
   {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Paid",
+    particulars: "Expense Description",
+    amount: "12,000",
+    type: "Expense",
+    createdAt: "21 July, 2024",
+    status: "Pending",
+    attachments: 1,
+    action: "view",
   },
   {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
+    particulars: "Invoice Description",
+    amount: "12,000",
+    type: "Invoice",
+    createdAt: "21 July, 2024",
+    status: "Reconciled",
+    attachments: 1,
+    action: "view",
   },
   {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Paid",
+    particulars: "Aadarsha Lamichhane",
+    amount: "12,000",
+    type: "Salary",
+    createdAt: "21 July, 2024",
+    status: "Pending",
+    attachments: 1,
+    action: "view",
   },
   {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Partial",
+    particulars: "Aadarsha Lamichhane",
+    amount: "12,000",
+    type: "Salary",
+    createdAt: "21 July, 2024",
+    status: "Reconciled",
+    attachments: 1,
+    action: "view",
   },
   {
-    employee: "test Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
+    particulars: "Aadarsha Lamichhane",
+    amount: "12,000",
+    type: "Salary",
+    createdAt: "21 July, 2024",
+    status: "Reconciled",
+    attachments: 1,
+    action: "view",
   },
   {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Paid",
+    particulars: "Aadarsha Lamichhane",
+    amount: "12,000",
+    type: "Salary",
+    createdAt: "21 July, 2024",
+    status: "Pending",
+    attachments: 1,
+    action: "view",
   },
   {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Paid",
+    particulars: "Aadarsha Lamichhane",
+    amount: "12,000",
+    type: "Salary",
+    createdAt: "21 July, 2024",
+    status: "Reconciled",
+    attachments: 1,
+    action: "view",
   },
   {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
+    particulars: "Aadarsha Lamichhane",
+    amount: "12,000",
+    type: "Salary",
+    createdAt: "21 July, 2024",
+    status: "Reconciled",
+    attachments: 1,
+    action: "view",
   },
   {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
+    particulars: "Aadarsha Lamichhane",
+    amount: "12,000",
+    type: "Salary",
+    createdAt: "21 July, 2024",
+    status: "Reconciled",
+    attachments: 1,
+    action: "view",
   },
 ];
 
-export type PaymentDetails = {
-  status: "Due" | "Paid" | "Partial";
-  employee: string;
-  total: string;
-  department: string;
+export type ExpenseDetails = {
+  particulars: string;
+  amount: string;
+  type: string;
+  createdAt: string;
+  status: string;
+  attachments: number;
+  action: string;
 };
 
-export function PayrunTableDetails() {
+export function ExpenseListTable() {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -189,47 +175,56 @@ export function PayrunTableDetails() {
   const [rowSelection, setRowSelection] = React.useState({});
   const [selectedResizableRow, setSelectedResizableRow] = React.useState();
 
-  const columns: ColumnDef<PaymentDetails>[] = [
+  const columns: ColumnDef<ExpenseDetails>[] = [
     {
-      accessorKey: "employee",
-      header: "Employee Name",
+      accessorKey: "particulars",
+      header: "Particulars",
       cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("employee")}</div>
+        <div className="capitalize">{row.getValue("particulars")}</div>
       ),
     },
     {
-      accessorKey: "department",
-      header: "Department",
+      accessorKey: "amount",
+      header: "Amount",
       cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("department")}</div>
+        <div className="capitalize">{row.getValue("amount")}</div>
       ),
     },
     {
-      accessorKey: "total",
-      header: "Total",
+      accessorKey: "type",
+      header: "Type",
       cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("total")}</div>
+        <div className="capitalize">{row.getValue("type")}</div>
+      ),
+    },
+    {
+      accessorKey: "createdAt",
+      header: "Created At",
+      cell: ({ row }) => (
+        <div className="capitalize">{row.getValue("createdAt")}</div>
       ),
     },
     {
       header: "Status",
       accessorKey: "status",
       cell: ({ row }) =>
-        row.getValue("status") === "Paid" ? (
+        row.getValue("status") === "Reconciled" ? (
           <div className="bg-green-100 flex justify-center items-center text-green-700 rounded-2xl h-8 w-24">
-            Paid
-          </div>
-        ) : row.getValue("status") === "Partial" ? (
-          <div className="bg-yellow-100 flex justify-center items-center text-yellow-700 rounded-2xl h-8 w-24">
-            Partial
+            Reconciled
           </div>
         ) : (
           <div className="bg-red-100 flex justify-center items-center text-red-700 rounded-2xl h-8 w-24">
-            Due
+            Pending
           </div>
         ),
     },
-
+    {
+      accessorKey: "attachments",
+      header: "Attachments",
+      cell: ({ row }) => (
+        <div className="capitalize">{row.getValue("attachments")}</div>
+      ),
+    },
     {
       id: "actions",
       header: "Actions",
@@ -245,7 +240,6 @@ export function PayrunTableDetails() {
               }}
               className="h-5 w-5 cursor-pointer"
             />
-            <HandCoins className="h-5 w-5 cursor-pointer" />
           </div>
         );
       },
@@ -285,23 +279,38 @@ export function PayrunTableDetails() {
                 </p>
               </div>
               <div className="flex flex-col ml-auto">
-                <ClosePayRunDailog />
+                {/* <ClosePayRunDailog /> */}
               </div>
             </div>
             <Table className="">
               <div className="flex items-center mb-6 pt-2">
                 <Input
                   className="rounded mr-2"
-                  placeholder="Filter Name"
+                  placeholder="Search Expense"
                   type="text"
                   value={
-                    (table.getColumn("employee")?.getFilterValue() as string) ??
-                    ""
+                    (table
+                      .getColumn("particulars")
+                      ?.getFilterValue() as string) ?? ""
                   }
                   onChange={(e) =>
-                    table.getColumn("employee")?.setFilterValue(e.target.value)
+                    table
+                      .getColumn("particulars")
+                      ?.setFilterValue(e.target.value)
                   }
                 />
+                <Select>
+                  <SelectTrigger className="w-[350px] font-medium mr-2">
+                    <SelectValue placeholder="Select Type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {data.map((d) => (
+                      <SelectItem key={d.status} value={d.status.toString()}>
+                        {d.status}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
 
                 <Select>
                   <SelectTrigger className="w-[350px] font-medium mr-2">
@@ -431,7 +440,7 @@ export function PayrunTableDetails() {
             <>
               <ResizableHandle className="ml-4" />
               <ResizablePanel defaultSize={37} minSize={37} maxSize={37}>
-                <ResizableRowDetail
+                <ExpenseResizableRowDetail
                   selectedRow={selectedResizableRow}
                   setSelectedRow={setSelectedResizableRow}
                 />

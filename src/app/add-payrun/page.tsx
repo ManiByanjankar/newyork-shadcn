@@ -1,7 +1,7 @@
-import AddPayRun from "@/components/sections/payrun/addPayrun";
+import AddPayRun from "@/components/sections/Payrun/addPayrun";
 import React from "react";
 
-const AddPayrun = () => {
+const AddPayrunForm = () => {
   return (
     <>
       <AddPayRun />
@@ -9,4 +9,4 @@ const AddPayrun = () => {
   );
 };
 
-export default AddPayrun;
+export default AddPayrunForm;

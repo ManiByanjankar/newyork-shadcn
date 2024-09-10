@@ -31,7 +31,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { PayrunTable } from "./payrun/payrunTable";
+import { PayrunTable } from "./Payrun/payrunTable";
 import SideNavbar from "./sidenavbar/sidenav";
 import MobileViewHamburger from "./mobile-navbar/mobileviewnav";
 export function TestHome() {

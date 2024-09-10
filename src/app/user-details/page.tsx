@@ -1,6 +1,7 @@
+import { ExpenseListTable } from "@/components/sections/Expense/ExpenseListTabel";
 import MobileViewHamburger from "@/components/sections/mobile-navbar/mobileviewnav";
-import { PayrunTableDetails } from "@/components/sections/Payrun/payrunDetailsTable";
 import SideNavbar from "@/components/sections/sidenavbar/sidenav";
+import { UserListTable } from "@/components/sections/User-table/userListTable";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -39,7 +40,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
-const PayrunDetailsTable = () => {
+const UserDetailsTable = () => {
   return (
     <TooltipProvider>
       <div className="flex min-h-screen w-full flex-col bg-muted/40">
@@ -85,7 +86,7 @@ const PayrunDetailsTable = () => {
           <hr className="w-full" />
           <main className="gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
             <div className="border rounded-lg">
-              <PayrunTableDetails />
+              <UserListTable />
             </div>
           </main>
         </div>
@@ -94,4 +95,4 @@ const PayrunDetailsTable = () => {
   );
 };
 
-export default PayrunDetailsTable;
+export default UserDetailsTable;

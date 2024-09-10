@@ -1,3 +1,4 @@
+import { DepartmentTableDetails } from "@/components/sections/Department/departmentDetailsTable";
 import MobileViewHamburger from "@/components/sections/mobile-navbar/mobileviewnav";
 import { PayrunTableDetails } from "@/components/sections/Payrun/payrunDetailsTable";
 import SideNavbar from "@/components/sections/sidenavbar/sidenav";
@@ -85,7 +86,7 @@ const PayrunDetailsTable = () => {
           <hr className="w-full" />
           <main className="gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
             <div className="border rounded-lg">
-              <PayrunTableDetails />
+              <DepartmentTableDetails />
             </div>
           </main>
         </div>
