@@ -22,15 +22,15 @@ export function ClosePayRunDailog() {
           size="sm"
           variant="outline"
         >
-          <X color="#0f45e6" />
+          <X color="#0f45e6" size={20} className="mr-1.5" />
           Close Pay Run
         </Button>
       </DialogTrigger>
       <div>
         <DialogContent crossStyle="hidden" className="sm:max-w-[560px] p-7">
           <DialogHeader className="gap-1 justify-center items-center mb-2">
-            <div className="rounded-full border flex justify-center bg-gray-200 items-center w-[50px] h-[50px] mb-3">
-              <TriangleAlert color="#e41111" strokeWidth={1.75} />
+            <div className="rounded-full border flex justify-center bg-[#FCEEEE] items-center w-[45px] h-[45px] mb-3">
+              <TriangleAlert color="#D92626" strokeWidth={2} size={24} />
             </div>
             <DialogTitle>
               Are you sure you want to close the pay run?

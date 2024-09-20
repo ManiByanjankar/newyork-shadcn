@@ -40,6 +40,7 @@ import {
   ChevronDown,
   Eye,
   HandCoins,
+  Pencil,
   Plus,
   Search,
   Settings2,
@@ -57,129 +58,138 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import ResizableRowDetail from "./resizableRowDetail";
-import { ClosePayRunDailog } from "./close-payrun-modal";
+
+// import { ClosePayRunDailog } from "./close-payrun-modal";
 import NoDataPreivew from "../no-data-preview/NoDataPreivew";
-// const data: PaymentDetails[] = [];
-const data: PaymentDetails[] = [
+import CategoryResizeableRowDetail from "./categoryResizeableRowDetail";
+import { AddCategoryForm } from "./addCategoryDailog";
+import { EditCategoryForm } from "./editCategoryDailog";
+
+const data: CategoryDetails[] = [
   {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Paid",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Paid",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Partial",
-  },
-  {
-    employee: "test Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Paid",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Paid",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
-  },
-  {
-    employee: "Aadarsha Lamichhane",
-    department: "Backend Development",
-    total: "Rs 5,00,000",
-    status: "Due",
+    name: "Project Demo 1",
+    department: "Aadarsha Lamichhane",
   },
 ];
 
-export type PaymentDetails = {
-  status: "Due" | "Paid" | "Partial";
-  employee: string;
-  total: string;
+// const data: CategoryDetails[] = [];
+
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Due",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Paid",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Due",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Paid",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Partial",
+//   },
+//   {
+//     employee: "test Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Due",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Paid",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Paid",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Due",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Due",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Due",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Due",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Due",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Due",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Due",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Due",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Due",
+//   },
+//   {
+//     employee: "Aadarsha Lamichhane",
+//     department: "Backend Development",
+//     total: "Rs 5,00,000",
+//     status: "Due",
+//   },
+// ];
+
+export type CategoryDetails = {
+  name: string;
   department: string;
 };
 
-export function PayrunTableDetails() {
+export function CategoryTableDetails() {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -189,14 +199,7 @@ export function PayrunTableDetails() {
   const [rowSelection, setRowSelection] = React.useState({});
   const [selectedResizableRow, setSelectedResizableRow] = React.useState();
 
-  const columns: ColumnDef<PaymentDetails>[] = [
-    {
-      accessorKey: "employee",
-      header: "Employee Name",
-      cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("employee")}</div>
-      ),
-    },
+  const columns: ColumnDef<CategoryDetails>[] = [
     {
       accessorKey: "department",
       header: "Department",
@@ -205,47 +208,32 @@ export function PayrunTableDetails() {
       ),
     },
     {
-      accessorKey: "total",
-      header: "Total",
+      accessorKey: "name",
+      header: "Name",
       cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("total")}</div>
+        <div className="capitalize">{row.getValue("name")}</div>
       ),
-    },
-    {
-      header: "Status",
-      accessorKey: "status",
-      cell: ({ row }) =>
-        row.getValue("status") === "Paid" ? (
-          <div className="bg-green-100 flex justify-center items-center text-green-700 rounded-2xl h-8 w-24">
-            Paid
-          </div>
-        ) : row.getValue("status") === "Partial" ? (
-          <div className="bg-yellow-100 flex justify-center items-center text-yellow-700 rounded-2xl h-8 w-24">
-            Partial
-          </div>
-        ) : (
-          <div className="bg-red-100 flex justify-center items-center text-red-700 rounded-2xl h-8 w-24">
-            Due
-          </div>
-        ),
     },
 
     {
       id: "actions",
-      header: "Actions",
+      header: () => <div className="text-center">Actions</div>,
       enableHiding: false,
       cell: ({ row }) => {
-        const payment = row.original;
+        const department = row.original;
 
         return (
-          <div className="flex gap-2 items-center">
-            <Eye
-              onClick={() => {
-                setSelectedResizableRow(payment as any);
-              }}
-              className="h-5 w-5 cursor-pointer"
-            />
-            <HandCoins className="h-5 w-5 cursor-pointer" />
+          <div className="items-center text-center">
+            {/* <Button variant="ghost" className="h-8 w-8 p-0">
+              <Eye
+                onClick={() => {
+                  setSelectedResizableRow(department as any);
+                }}
+                className="h-5 w-5 cursor-pointer"
+              />
+            </Button> */}
+
+            <EditCategoryForm />
           </div>
         );
       },
@@ -285,7 +273,7 @@ export function PayrunTableDetails() {
                 </p>
               </div>
               <div className="flex flex-col ml-auto">
-                <ClosePayRunDailog />
+                {/* <ClosePayRunDailog /> */}
               </div>
             </div>
             <Table className="">
@@ -303,7 +291,7 @@ export function PayrunTableDetails() {
                   }
                 />
 
-                <Select>
+                {/* <Select>
                   <SelectTrigger className="w-[350px] font-medium mr-2">
                     <SelectValue placeholder="Select Year" />
                   </SelectTrigger>
@@ -314,11 +302,11 @@ export function PayrunTableDetails() {
                       </SelectItem>
                     ))}
                   </SelectContent>
-                </Select>
+                </Select> */}
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="outline" className="mr-2">
+                    <Button variant="outline" className="mr-2 gap-2">
                       View <Settings2 className="mr-2 h-4 w-5" />
                     </Button>
                   </DropdownMenuTrigger>
@@ -342,12 +330,10 @@ export function PayrunTableDetails() {
                       })}
                   </DropdownMenuContent>
                 </DropdownMenu>
-                <Button className="bg-blue-600 ml-auto">
-                  <Plus className="mr-2 h-4 w-5" />
-                  Add Pay Run
-                </Button>
+
+                <AddCategoryForm />
               </div>
-              <ScrollArea className="h-[calc(100vh-375px)]">
+              <ScrollArea className="h-[calc(100vh-380px)]">
                 <TableHeader>
                   {table.getHeaderGroups().map((headerGroup) => (
                     <TableRow key={headerGroup.id}>
@@ -400,7 +386,6 @@ export function PayrunTableDetails() {
                 </TableBody>
               </ScrollArea>
             </Table>
-            {/* <hr /> */}
             <div className="flex items-center justify-end space-x-2 py-4">
               <div className="flex-1 text-sm text-muted-foreground">
                 {table.getFilteredSelectedRowModel().rows.length} of{" "}
@@ -431,7 +416,7 @@ export function PayrunTableDetails() {
             <>
               <ResizableHandle className="ml-4" />
               <ResizablePanel defaultSize={37} minSize={37} maxSize={37}>
-                <ResizableRowDetail
+                <CategoryResizeableRowDetail
                   selectedRow={selectedResizableRow}
                   setSelectedRow={setSelectedResizableRow}
                 />

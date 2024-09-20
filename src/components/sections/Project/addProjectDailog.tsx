@@ -27,7 +27,7 @@ import { Plus } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-export function AddDeparmentForm() {
+export function AddProjectForm() {
   const departmentSchema = z.object({
     departmentId: z.string().nonempty("Department name is required"),
   });
@@ -48,14 +48,14 @@ export function AddDeparmentForm() {
       <DialogTrigger asChild>
         <Button className="bg-blue-600 ml-auto w-[15rem]">
           <Plus size={20} strokeWidth={2} className="mr-2" />
-          Add Department
+          Add Project
         </Button>
       </DialogTrigger>
       <DialogContent crossStyle="hidden" className="sm:max-w-[442px]">
         <DialogHeader className="gap-1 mb-2">
-          <DialogTitle>Add Department</DialogTitle>
+          <DialogTitle>Add Project</DialogTitle>
           <DialogDescription className="font-medium text-sm">
-            Create a new department
+            Create a new project
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -65,7 +65,7 @@ export function AddDeparmentForm() {
               name="departmentId"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="font-bold">Department Name</FormLabel>
+                  <FormLabel className="font-bold">Project Name</FormLabel>
                   <FormControl>
                     <Input placeholder="Enter department name" {...field} />
                   </FormControl>

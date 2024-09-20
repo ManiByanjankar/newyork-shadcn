@@ -10,7 +10,7 @@ import {
   ReceiptText,
 } from "lucide-react";
 
-interface UserPersonalDetailsProps {
+interface PersonalSalaryDetailProps {
   expenseTitle: string;
   paymentForm: string;
   type: string;
@@ -21,7 +21,7 @@ interface UserPersonalDetailsProps {
   remarks: string;
 }
 
-const UserPersonalDetails: React.FC<UserPersonalDetailsProps> = ({
+const PersonalSalaryDetail: React.FC<PersonalSalaryDetailProps> = ({
   expenseTitle,
   paymentForm,
   type,
@@ -147,4 +147,4 @@ const UserPersonalDetails: React.FC<UserPersonalDetailsProps> = ({
   );
 };
 
-export default UserPersonalDetails;
+export default PersonalSalaryDetail;

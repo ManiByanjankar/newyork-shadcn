@@ -14,7 +14,6 @@ import {
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -23,11 +22,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { Plus } from "lucide-react";
+import { Pencil, Plus } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-export function AddDeparmentForm() {
+export function EditCategoryForm() {
   const departmentSchema = z.object({
     departmentId: z.string().nonempty("Department name is required"),
   });
@@ -46,16 +45,15 @@ export function AddDeparmentForm() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="bg-blue-600 ml-auto w-[15rem]">
-          <Plus size={20} strokeWidth={2} className="mr-2" />
-          Add Department
+        <Button variant="ghost" className="h-8 w-8 p-0">
+          <Pencil className="h-5 w-5 cursor-pointer" />
         </Button>
       </DialogTrigger>
-      <DialogContent crossStyle="hidden" className="sm:max-w-[442px]">
+      <DialogContent crossStyle="hidden" className="sm:max-w-[440px]">
         <DialogHeader className="gap-1 mb-2">
-          <DialogTitle>Add Department</DialogTitle>
+          <DialogTitle>Edit Category Name</DialogTitle>
           <DialogDescription className="font-medium text-sm">
-            Create a new department
+            You may change the category name
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -65,26 +63,22 @@ export function AddDeparmentForm() {
               name="departmentId"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="font-bold">Department Name</FormLabel>
+                  <FormLabel className="font-bold">Category Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter department name" {...field} />
+                    <Input placeholder="Rumsan" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <DialogFooter className="mx-auto sm:justify-center mt-3">
+            <DialogFooter className="flex sm:justify-center">
               <DialogClose asChild>
-                <Button
-                  className="min-w-[12rem] "
-                  variant="secondary"
-                  type="submit"
-                >
+                <Button className="min-w-48 " variant="secondary" type="submit">
                   Cancel
                 </Button>
               </DialogClose>
-              <Button className="min-w-[12rem] fw-[600]" type="submit">
-                Add
+              <Button className="min-w-48 fw-[600]" type="submit">
+                Save Changes
               </Button>
             </DialogFooter>
           </form>

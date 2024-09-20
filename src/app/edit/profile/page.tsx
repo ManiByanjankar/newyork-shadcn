@@ -1,5 +1,6 @@
 import { DepartmentTableDetails } from "@/components/sections/Department/departmentDetailsTable";
 import MobileViewHamburger from "@/components/sections/mobile-navbar/mobileviewnav";
+import { EditProfilePage } from "@/components/sections/ProfilePage/editProfile";
 // import { PayrunTableDetails } from "@/components/sections/Payrun/DepartmentDetailsTable";
 import SideNavbar from "@/components/sections/sidenavbar/sidenav";
 import { Button } from "@/components/ui/button";
@@ -73,20 +74,18 @@ const DepartmentDetailsTable = () => {
                   />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
+              <DropdownMenuContent className="min-w-[10rem]" align="end">
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>Settings</DropdownMenuItem>
-                <DropdownMenuItem>Support</DropdownMenuItem>
-                <DropdownMenuSeparator />
+                <DropdownMenuItem>Profile</DropdownMenuItem>
                 <DropdownMenuItem>Logout</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </header>
           <hr className="w-full" />
           <main className="gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
-            <div className="border rounded-lg">
-              <DepartmentTableDetails />
+            <div className="pt-6">
+              <EditProfilePage />
             </div>
           </main>
         </div>

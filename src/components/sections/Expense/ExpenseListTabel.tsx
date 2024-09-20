@@ -57,10 +57,10 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import ResizableRowDetail from "./resizableRowDetail";
-import { ClosePayRunDailog } from "./close-payrun-modal";
+
 import NoDataPreivew from "../no-data-preview/NoDataPreivew";
 import ExpenseResizableRowDetail from "./ExpenseResizableRowDetail";
+import SalaryResizableRowDetail from "./SalaryResizableRowDetail";
 // const data: ExpenseDetails[] = [];
 const data: ExpenseDetails[] = [
   {
@@ -84,7 +84,7 @@ const data: ExpenseDetails[] = [
   {
     particulars: "Invoice Description",
     amount: "12,000",
-    type: "Invoice",
+    type: "Expense",
     createdAt: "21 July, 2024",
     status: "Reconciled",
     attachments: 1,
@@ -173,7 +173,8 @@ export function ExpenseListTable() {
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
-  const [selectedResizableRow, setSelectedResizableRow] = React.useState();
+  const [selectedResizableRow, setSelectedResizableRow] =
+    React.useState<ExpenseDetails>();
 
   const columns: ColumnDef<ExpenseDetails>[] = [
     {
@@ -194,7 +195,9 @@ export function ExpenseListTable() {
       accessorKey: "type",
       header: "Type",
       cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("type")}</div>
+        <div className="capitalize bg-gray-100 flex justify-center items-center text-green-700 rounded-2xl h-8 w-24">
+          {row.getValue("type")}
+        </div>
       ),
     },
     {
@@ -272,10 +275,10 @@ export function ExpenseListTable() {
             <div className="flex items-center gap-1 my-3">
               <div className="flex flex-col gap-1 my-3">
                 <h1 className="text-2xl font-semibold text-gray-900">
-                  Pay Run (December, 2024)
+                  Expense
                 </h1>
                 <p className="text-gray-500 font-normal text-sm">
-                  Track all the PayRuns reports here
+                  Track all the expense reports here
                 </p>
               </div>
               <div className="flex flex-col ml-auto">
@@ -314,7 +317,7 @@ export function ExpenseListTable() {
 
                 <Select>
                   <SelectTrigger className="w-[350px] font-medium mr-2">
-                    <SelectValue placeholder="Select Year" />
+                    <SelectValue placeholder="Select Status" />
                   </SelectTrigger>
                   <SelectContent>
                     {data.map((d) => (
@@ -352,11 +355,11 @@ export function ExpenseListTable() {
                   </DropdownMenuContent>
                 </DropdownMenu>
                 <Button className="bg-blue-600 ml-auto">
-                  <Plus className="mr-2 h-4 w-5" />
-                  Add Pay Run
+                  <Plus className="mr-2" size={20} strokeWidth={2} />
+                  Add Expense
                 </Button>
               </div>
-              <ScrollArea className="h-[calc(100vh-380px)]">
+              <ScrollArea className="h-[calc(100vh-390px)]">
                 <TableHeader>
                   {table.getHeaderGroups().map((headerGroup) => (
                     <TableRow key={headerGroup.id}>
@@ -438,12 +441,20 @@ export function ExpenseListTable() {
 
           {selectedResizableRow && (
             <>
+              {console.log({ selectedResizableRow })}
               <ResizableHandle className="ml-4" />
               <ResizablePanel defaultSize={37} minSize={37} maxSize={37}>
-                <ExpenseResizableRowDetail
-                  selectedRow={selectedResizableRow}
-                  setSelectedRow={setSelectedResizableRow}
-                />
+                {selectedResizableRow.type === "Salary" ? (
+                  <SalaryResizableRowDetail
+                    selectedRow={selectedResizableRow}
+                    setSelectedRow={setSelectedResizableRow}
+                  />
+                ) : (
+                  <ExpenseResizableRowDetail
+                    selectedRow={selectedResizableRow}
+                    setSelectedRow={setSelectedResizableRow}
+                  />
+                )}
               </ResizablePanel>
             </>
           )}

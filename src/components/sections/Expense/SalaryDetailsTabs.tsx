@@ -10,11 +10,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
+import PersonalExpenseDetails from "./PersonalExpenseTab";
 import { FileText, Image, Landmark } from "lucide-react";
-import UserPersonalDetails from "./personalDetailTab";
+import PersonalSalaryDetail from "./PersonalSalaryTab";
 
-export function UserDetailsTab() {
+export function SalaryDetailsTab() {
   return (
     <Tabs defaultValue="personaldetail" className="w-auto">
       <div className="p-2">
@@ -38,10 +38,10 @@ export function UserDetailsTab() {
       </div>
       <TabsContent value="personaldetail">
         <div className="py-2">
-          <UserPersonalDetails
-            expenseTitle="July 10, 2024"
-            paymentForm="NIC Asia"
-            type="Expense"
+          <PersonalSalaryDetail
+            expenseTitle="July 11110, 2024"
+            paymentForm="NOOOIC Asia"
+            type="Salary"
             category="Category Name"
             department="Department Name"
             project="Project Name"

@@ -9,7 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Calendar } from "lucide-react";
+import { Banknote, Calendar, User } from "lucide-react";
 
 export function ProcessPayRollDailog() {
   return (
@@ -32,7 +32,7 @@ export function ProcessPayRollDailog() {
           <div className="grid gap-4 py-4 border rounded-lg">
             <div className="flex items-center px-4">
               <div className="flex justify-center items-center w-[40px] h-[40px] ">
-                <Calendar strokeWidth={1.5} className="w-6 h-6 text-gray-600" />
+                <User size={20} strokeWidth={2} />
               </div>
               <div className="flex flex-col ml-4 gap-1">
                 <span className="font-semibold text-sm">Name</span>
@@ -41,7 +41,7 @@ export function ProcessPayRollDailog() {
             </div>
             <div className="flex items-center px-4">
               <div className="flex justify-center items-center w-[40px] h-[40px] ">
-                <Calendar strokeWidth={1.5} className="w-6 h-6 text-gray-600" />
+                <Calendar size={20} strokeWidth={2} />
               </div>
               <div className="flex flex-col ml-4 gap-1">
                 <span className="font-semibold text-sm">Month</span>
@@ -50,7 +50,7 @@ export function ProcessPayRollDailog() {
             </div>
             <div className="flex items-center px-4">
               <div className="flex justify-center items-center w-[40px] h-[40px] ">
-                <Calendar strokeWidth={1.5} className="w-6 h-6 text-gray-600" />
+                <Banknote size={20} strokeWidth={2} />
               </div>
               <div className="flex flex-col ml-4 gap-1">
                 <span className="font-semibold text-sm">Amount</span>

@@ -3,15 +3,13 @@ import React, { FC } from "react";
 import { Edit, Pencil, Trash2, X } from "lucide-react";
 import Image from "next/image";
 import PayDetail from "../EmployeeDetail/employeeDetailTable";
-import { ProcessPayRollDailog } from "./process-payroll-modal";
-import { PartialPayRollDailog } from "./partial-payroll-modal";
 
-interface ResizableRowDetailProps {
+interface CategoryResizeableRowDetailProps {
   selectedRow: any;
   setSelectedRow: any;
 }
 
-const ResizableRowDetail: FC<ResizableRowDetailProps> = ({
+const CategoryResizeableRowDetail: FC<CategoryResizeableRowDetailProps> = ({
   selectedRow,
   setSelectedRow,
 }) => {
@@ -29,19 +27,17 @@ const ResizableRowDetail: FC<ResizableRowDetailProps> = ({
     // components/EmployeePayRunDetails.tsx
 
     <div className="">
-      <div className="px-4 py-2 flex items-center justify-between">
+      <div className="p-4 flex items-center justify-between">
         <div className="flex flex-col gap-1 my-3">
-          <div
-            className="rounded-full
-             flex justify-center bg-[#EEF4FC] items-center w-[40px] h-[40px] "
-          >
-            <Pencil size={20} color="#297AD6" />
-          </div>
+          <Button variant="ghost" className="text-blue-500">
+            <div className="rounded-full border flex justify-center bg-blue-200 items-center w-[40px] h-[40px] ">
+              <Pencil className="w-5 h-5" />
+            </div>
+          </Button>
         </div>
 
         <div className="flex space-x-2">
           <Button
-            className="hover:bg-transparent focus:ring-0 active:bg-transparent"
             variant="ghost"
             onClick={() => {
               setSelectedRow(null);
@@ -73,10 +69,6 @@ const ResizableRowDetail: FC<ResizableRowDetailProps> = ({
 
       <hr className="w-full" />
 
-      <div className="p-4 border-t flex justify-around space-x-2">
-        <PartialPayRollDailog />
-        <ProcessPayRollDailog />
-      </div>
       {/* <div className="p-4">
         <div className="flex items-center justify-between py-2">
           <div className="flex items-center">
@@ -129,4 +121,4 @@ const ResizableRowDetail: FC<ResizableRowDetailProps> = ({
   );
 };
 
-export default ResizableRowDetail;
+export default CategoryResizeableRowDetail;

@@ -101,6 +101,16 @@ const PersonalExpenseDetails: React.FC<PersonalExpenseDetailsProps> = ({
           <span className="text-[12px]">{category}</span>
         </div>
       </div>
+      {/* <hr className="w-full" />
+      <div className="flex items-center px-4">
+        <div className="rounded-full flex justify-center items-center w-[40px] h-[40px] ">
+          <Layers strokeWidth={1.5} className="w-5 h-5 text-gray-600" />
+        </div>
+        <div className="flex flex-col ml-4 tracking-wide">
+          <span className="font-[600] text-xs mr-auto mb-1">Category</span>
+          <span className="text-[12px]">{category}</span>
+        </div>
+      </div> */}
 
       <hr className="w-full" />
       <div className="flex items-center px-4">

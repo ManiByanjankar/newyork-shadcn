@@ -1,6 +1,7 @@
 import { DepartmentTableDetails } from "@/components/sections/Department/departmentDetailsTable";
 import MobileViewHamburger from "@/components/sections/mobile-navbar/mobileviewnav";
-// import { PayrunTableDetails } from "@/components/sections/Payrun/DepartmentDetailsTable";
+import { ProjectTableDetails } from "@/components/sections/Project/projectDetailsTable";
+// import { PayrunTableDetails } from "@/components/sections/Payrun/ProjectDetailTable";
 import SideNavbar from "@/components/sections/sidenavbar/sidenav";
 import { Button } from "@/components/ui/button";
 import {
@@ -40,7 +41,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
-const DepartmentDetailsTable = () => {
+const ProjectDetailsTable = () => {
   return (
     <TooltipProvider>
       <div className="flex min-h-screen w-full flex-col bg-muted/40">
@@ -86,7 +87,7 @@ const DepartmentDetailsTable = () => {
           <hr className="w-full" />
           <main className="gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
             <div className="border rounded-lg">
-              <DepartmentTableDetails />
+              <ProjectTableDetails />
             </div>
           </main>
         </div>
@@ -95,4 +96,4 @@ const DepartmentDetailsTable = () => {
   );
 };
 
-export default DepartmentDetailsTable;
+export default ProjectDetailsTable;

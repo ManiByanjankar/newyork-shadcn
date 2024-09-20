@@ -3,13 +3,14 @@ import React, { FC } from "react";
 import { Edit, Pencil, Trash2, X } from "lucide-react";
 // import Image from "next/image";
 import { ExpenseDetailsTabs } from "./ExpenseDetailTabs";
+import { SalaryDetailsTab } from "./SalaryDetailsTabs";
 
-interface ExpenseResizableRowDetailProps {
+interface SalaryResizableRowDetailProps {
   selectedRow: any;
   setSelectedRow: any;
 }
 
-const ExpenseResizableRowDetail: FC<ExpenseResizableRowDetailProps> = ({
+const SalaryResizableRowDetail: FC<SalaryResizableRowDetailProps> = ({
   selectedRow,
   setSelectedRow,
 }) => {
@@ -39,18 +40,18 @@ const ExpenseResizableRowDetail: FC<ExpenseResizableRowDetailProps> = ({
       </div>
       <div className="px-3 flex items-center justify-between">
         <div className="flex flex-col gap-1 my-3">
-          <h2 className="text-lg font-semibold">Expense Details</h2>
+          <h2 className="text-lg font-semibold">Salary Details</h2>
           <p className="text-gray-500 font-normal text-sm">
-            here is the overview of the expense
+            Here is the overview of the salary
           </p>
         </div>
       </div>
       <hr className="w-full" />
       <div className="py-4 text-center">
-        <ExpenseDetailsTabs />
+        <SalaryDetailsTab />
       </div>
     </>
   );
 };
 
-export default ExpenseResizableRowDetail;
+export default SalaryResizableRowDetail;

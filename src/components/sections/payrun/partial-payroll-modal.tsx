@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Calendar, TriangleAlert } from "lucide-react";
+import { Banknote, Calendar, TriangleAlert, User } from "lucide-react";
 
 export function PartialPayRollDailog() {
   return (
@@ -22,10 +22,10 @@ export function PartialPayRollDailog() {
         </Button>
       </DialogTrigger>
       <div>
-        <DialogContent className="sm:max-w-[560px] p-7">
+        <DialogContent className="sm:max-w-xl p-7">
           <DialogHeader className="gap-1 justify-center items-center mb-2">
             <div className="rounded-full border flex justify-center bg-gray-200 items-center w-[40px] h-[40px] ">
-              <TriangleAlert color="#e41111" strokeWidth={1.75} />
+              <TriangleAlert color="#e41111" strokeWidth={2} size={20} />
             </div>
             <DialogTitle className="tracking-wide">
               Partial PayRun Dispatch
@@ -46,7 +46,7 @@ export function PartialPayRollDailog() {
           <div className="grid gap-4 py-4 border rounded-lg">
             <div className="flex items-center px-4">
               <div className="flex justify-center items-center w-[40px] h-[40px] ">
-                <Calendar strokeWidth={1.5} className="w-6 h-6 text-gray-600" />
+                <User strokeWidth={1.5} className="w-6 h-6 text-gray-600" />
               </div>
               <div className="flex flex-col ml-4 gap-1">
                 <span className="font-semibold text-sm">Name</span>
@@ -64,7 +64,7 @@ export function PartialPayRollDailog() {
             </div>
             <div className="flex items-center px-4">
               <div className="flex justify-center items-center w-[40px] h-[40px] ">
-                <Calendar strokeWidth={1.5} className="w-6 h-6 text-gray-600" />
+                <Banknote strokeWidth={1.5} className="w-6 h-6 text-gray-600" />
               </div>
               <div className="flex flex-col ml-4 gap-1">
                 <span className="font-semibold text-sm">Amount</span>
@@ -73,20 +73,20 @@ export function PartialPayRollDailog() {
             </div>
             <div className="flex items-center px-4">
               <div className="flex justify-center items-center w-[40px] h-[40px] ">
-                <Calendar strokeWidth={1.5} className="w-6 h-6 text-gray-600" />
+                <Banknote strokeWidth={1.5} className="w-6 h-6 text-gray-600" />
               </div>
               <div className="flex flex-col ml-4 gap-1">
                 <span className="font-semibold text-sm">Partial Amount</span>
-                <span className="text-xs text-green-600">Rs. 40000</span>
+                <span className="text-xs text-[#4CAF50]">Rs. 40000</span>
               </div>
             </div>
             <div className="flex items-center px-4">
               <div className="flex justify-center items-center w-[40px] h-[40px] ">
-                <Calendar strokeWidth={1.5} className="w-6 h-6 text-gray-600" />
+                <Banknote strokeWidth={1.5} className="w-6 h-6 text-gray-600" />
               </div>
               <div className="flex flex-col ml-4 gap-1">
                 <span className="font-semibold text-sm">Due</span>
-                <span className="text-xs text-red-700">Rs. 35000</span>
+                <span className="text-xs text-[#D92626]">Rs. 35000</span>
               </div>
             </div>
           </div>

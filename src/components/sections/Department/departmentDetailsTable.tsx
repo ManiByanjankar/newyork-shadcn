@@ -65,6 +65,7 @@ import { AddDeparmentForm } from "./addDepartmentDailog";
 import { EditDeparmentForm } from "./editDepartmentDailog";
 const data: DepartmentDetails[] = [
   {
+    name: "Project Demo 1",
     department: "Aadarsha Lamichhane",
   },
 ];
@@ -182,6 +183,7 @@ const data: DepartmentDetails[] = [
 // ];
 
 export type DepartmentDetails = {
+  name: string;
   department: string;
 };
 
@@ -201,6 +203,13 @@ export function DepartmentTableDetails() {
       header: "Department",
       cell: ({ row }) => (
         <div className="capitalize">{row.getValue("department")}</div>
+      ),
+    },
+    {
+      accessorKey: "name",
+      header: "Name",
+      cell: ({ row }) => (
+        <div className="capitalize">{row.getValue("name")}</div>
       ),
     },
 

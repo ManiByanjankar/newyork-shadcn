@@ -269,15 +269,10 @@ export function UserListTable() {
           <ResizablePanel className="p-4">
             <div className="flex items-center gap-1 my-3">
               <div className="flex flex-col gap-1 my-3">
-                <h1 className="text-2xl font-semibold text-gray-900">
-                  Pay Run (December, 2024)
-                </h1>
+                <h1 className="text-2xl font-semibold text-gray-900">Users</h1>
                 <p className="text-gray-500 font-normal text-sm">
-                  Track all the PayRuns reports here
+                  Here is the list of all the users
                 </p>
-              </div>
-              <div className="flex flex-col ml-auto">
-                {/* <ClosePayRunDailog /> */}
               </div>
             </div>
             <Table className="">
@@ -297,15 +292,27 @@ export function UserListTable() {
                       ?.setFilterValue(e.target.value)
                   }
                 />
-
                 <Select>
                   <SelectTrigger className="w-[350px] font-medium mr-2">
-                    <SelectValue placeholder="Select Year" />
+                    <SelectValue placeholder="Select Payroll Status" />
                   </SelectTrigger>
                   <SelectContent>
                     {data.map((d) => (
                       <SelectItem key={d.status} value={d.status.toString()}>
                         {d.status}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+
+                <Select>
+                  <SelectTrigger className="w-[350px] font-medium mr-2">
+                    <SelectValue placeholder="Select Department" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {data.map((d) => (
+                      <SelectItem key={d.type} value={d.type.toString()}>
+                        {d.type}
                       </SelectItem>
                     ))}
                   </SelectContent>

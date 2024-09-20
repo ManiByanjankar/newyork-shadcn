@@ -34,7 +34,8 @@ export default function ProfileCard() {
             <PhoneIcon strokeWidth={1.5} className="w-4 h-4 text-gray-600" />
           </div>
           <div className="flex flex-col ml-4">
-            <span className="font-medium text-sm">987456321</span>
+            <span className="font-medium text-sm text-black-600">Phone</span>
+            <span className="text-xs">987456321</span>
           </div>
         </div>
       </CardContent>
@@ -45,7 +46,8 @@ export default function ProfileCard() {
             <MailIcon strokeWidth={1.5} className="w-4 h-4 text-gray-600" />
           </div>
           <div className="flex flex-col ml-4">
-            <span className="font-medium text-sm">email@email.com</span>
+            <span className="font-medium text-sm text-black-600">Email</span>
+            <span className="text-xs">email@email.com</span>
           </div>
         </div>
       </CardContent>

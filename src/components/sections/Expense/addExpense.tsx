@@ -312,39 +312,7 @@ export default function AddExpenses() {
                             </FormItem>
                           )}
                         />
-                        {/* <FormField
-                          control={form.control}
-                          name="departmentId"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className="text-xs font-semibold">
-                                Department
-                              </FormLabel>
-                              <Select
-                                onValueChange={field.onChange}
-                                value={field.value}
-                              >
-                                <FormControl>
-                                  <SelectTrigger>
-                                    <SelectValue placeholder="Select Department" />
-                                  </SelectTrigger>
-                                </FormControl>
-                                <SelectContent>
-                                  <SelectItem value="1">
-                                    Department 1
-                                  </SelectItem>
-                                  <SelectItem value="2">
-                                    Department 2
-                                  </SelectItem>
-                                  <SelectItem value="3">
-                                    Department 3
-                                  </SelectItem>
-                                </SelectContent>
-                              </Select>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        /> */}
+
                         <FormField
                           control={form.control}
                           name="title"
@@ -379,12 +347,6 @@ export default function AddExpenses() {
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                  <SelectItem value="Add project">
-                                    <p className="p-1 gap-1 flex items-center cursor-pointer">
-                                      <Plus size={19} />
-                                      Add Project
-                                    </p>
-                                  </SelectItem>
                                   <SelectItem value="Employee">
                                     Employee
                                   </SelectItem>
@@ -453,12 +415,6 @@ export default function AddExpenses() {
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                  <SelectItem value="Add project">
-                                    <p className="p-1 gap-1 flex items-center cursor-pointer">
-                                      <Plus size={19} />
-                                      Add Department
-                                    </p>
-                                  </SelectItem>
                                   <SelectItem value="Employee">
                                     Employee
                                   </SelectItem>
@@ -522,12 +478,6 @@ export default function AddExpenses() {
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                  <SelectItem value="Add project">
-                                    <p className="p-1 gap-1 flex items-center cursor-pointer">
-                                      <Plus size={19} />
-                                      Add Category
-                                    </p>
-                                  </SelectItem>
                                   <SelectItem value="Employee">
                                     Employee
                                   </SelectItem>
@@ -611,8 +561,11 @@ export default function AddExpenses() {
                             <FormItem className="mt-4">
                               <FormControl>
                                 <div className="grid w-full items-center gap-2">
-                                  <Label htmlFor="picture">Attach File</Label>
+                                  <Label htmlFor="picture">
+                                    {files.length} Attach File
+                                  </Label>
                                   <Input
+                                    className="hidden"
                                     id="picture"
                                     type="file"
                                     multiple
@@ -621,11 +574,11 @@ export default function AddExpenses() {
                                       handleFilesChange(e.target.files);
                                     }}
                                   />
-                                  <div> {files.length} files selected </div>
+                                  {/* <div> {files.length} files selected </div> */}
                                   <div className="flex items-center gap-2">
                                     <Button
-                                      className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                                       type="button"
+                                      className="w-64 inline-flex items-center justify-center whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 shadow h-9 bg-transparent hover:bg-blue-500 text-black-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded-md"
                                       onClick={() =>
                                         document
                                           .getElementById("picture")
@@ -635,7 +588,7 @@ export default function AddExpenses() {
                                       {fileName ? fileName : "Choose File"}
                                     </Button>
 
-                                    <span>
+                                    <span style={{ whiteSpace: "nowrap" }}>
                                       {files.length
                                         ? files.length + "files selected"
                                         : "No file choosen"}

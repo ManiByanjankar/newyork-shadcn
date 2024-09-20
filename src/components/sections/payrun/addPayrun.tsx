@@ -137,7 +137,7 @@ export default function AddPayRun() {
                 onSubmit={form.handleSubmit(handleAddPayRun)}
                 className="space-y-6"
               >
-                <Card className="rounded-lg w-full max-w-screen-lg mx-auto mt-8 mb-8">
+                <Card className="rounded-lg w-full max-w-4xl mx-auto mt-8 mb-8">
                   <CardHeader>
                     <CardTitle>Add Pay Run</CardTitle>
                     <CardDescription>
